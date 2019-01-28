@@ -1,5 +1,23 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  h3= "ArticleTitle:"
+  for result in articles
+     +panel(result.PMID) 
+        |#{result.ArticleTitle}  ----
+        | Published On #{result.PubDate.Year}
+        | #{result.PubDate.Month}. ----
+        | Mesh Heading List:  
+        |  !{result.MeshHeadingList}
+
+  h3= "MeshHeadingList:"
+  for result in articles
+     p   #{result.PMID}
+        |#{result.MeshHeadingList[0]} 
+  
+  h3= "PubDate:"
+  for result in articles
+     p   #{result.PMID}
+        |#{result.PubDate.Year} 
+

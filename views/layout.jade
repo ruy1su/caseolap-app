@@ -1,7 +1,31 @@
+include mixins
 doctype html
 html
   head
     title= title
+    meta( charset='utf-8' )
+    meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+    meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+    meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+    link(href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/flatly/bootstrap.min.css", rel="stylesheet")
+ 
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+  body(style="padding-bottom:10rem;")
+    .container
+    script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
+    script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+    +nav("Welcome to CaseOlap", "dropdown_menu")
+        +nav_item( "index.html", "active" ) Home
+        +nav_item_dropdown( "#" )( label="Search" )
+            +nav_item( "/meshHead" ) MeshHeadings
+            +nav_item( "#" ) Journals
+            +nav_item( "#" ) Authors
+            +nav_divider
+            +nav_header More
+            +nav_item( "#" ) Separated link
+            +nav_item( "#" ) One more separated link
+        +nav_item( "about.html" ) About
+        +nav_item( "contact.html" ) Contact
+
     block content
+

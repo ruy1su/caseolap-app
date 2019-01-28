@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+  h3= "MeshHeadingList:"
+  for result in articles
+     +panel(result.PMID) 
+        | Mesh Heading List:  
+        |  !{result.MeshHeadingList}
