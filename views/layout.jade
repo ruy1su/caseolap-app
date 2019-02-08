@@ -14,18 +14,19 @@ html
     .container
     script( src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js' )
     script( src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js' )
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js")
     +nav("Welcome to CaseOlap", "dropdown_menu")
-        +nav_item( "index.html", "active" ) Home
+        +nav_item( "/", "active" ) Home
         +nav_item_dropdown( "#" )( label="Search" )
-            +nav_item( "/meshHead" ) MeshHeadings
-            +nav_item( "#" ) Journals
-            +nav_item( "#" ) Authors
+            +nav_item( "meshHead" ) MeshHeadings
+            +nav_item( "chart" ) Journals
+            +nav_item( "author" ) Authors
             +nav_divider
             +nav_header More
             +nav_item( "#" ) Separated link
             +nav_item( "#" ) One more separated link
-        +nav_item( "about.html" ) About
-        +nav_item( "contact.html" ) Contact
+        +nav_item( "about" ) About
+        +nav_item( "contact" ) Contact
 
     block content
 
